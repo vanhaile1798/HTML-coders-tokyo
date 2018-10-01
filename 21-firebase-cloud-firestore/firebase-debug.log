@@ -1,0 +1,28 @@
+[debug] [2018-10-01T08:46:21.771Z] ----------------------------------------------------------------------
+[debug] [2018-10-01T08:46:21.773Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Anh Nong Dan IT\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-10-01T08:46:21.774Z] CLI Version:   4.2.1
+[debug] [2018-10-01T08:46:21.774Z] Platform:      win32
+[debug] [2018-10-01T08:46:21.774Z] Node Version:  v8.11.4
+[debug] [2018-10-01T08:46:21.774Z] Time:          Mon Oct 01 2018 15:46:21 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-10-01T08:46:21.774Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-01T08:46:21.800Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-01T08:46:21.801Z] > authorizing via signed-in user
+[debug] [2018-10-01T08:46:21.803Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-10-01T08:46:21.804Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-10-01T08:46:22.328Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-01T08:46:22.358Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/vhail-todo-list-firestore  
+ 
+[debug] [2018-10-01T08:46:23.514Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-01T08:46:23.516Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/vhail-todo-list-firestore  
+ 
+[debug] [2018-10-01T08:46:24.899Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\programming\HTML-coders-tokyo\21-firebase-cloud-firestore'...
+[info] 
+[debug] [2018-10-01T08:46:24.902Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/883513857654/clients/_:getWebAppConfig  
+ 
+[debug] [2018-10-01T08:46:26.043Z] <<< HTTP RESPONSE 200
+[info] i  hosting[vhail-todo-list-firestore]: Serving hosting files from: public
+[info] +  hosting[vhail-todo-list-firestore]: Local server: http://localhost:5000

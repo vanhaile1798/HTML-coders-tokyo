@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="text" id="new-item" />
+	<button id="add-btn">Add</button>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript">
+		var url = 'http://localhost:8081/todos';
+		var addBtn = document.getElementById('add-btn');
+		addBtn.addEventListener('click', addItem);
+
+		function addItem() {
+			var input = document.getElementById('new-item');
+			var newItem = { content: input.value};
+			axios.post(url, newItem).then((item) => {
+				console.log('item saved ', item);
+				window.location.href='http://localhost:9080';
+			});
+			
+			// input.value = '';
+  		}
+</script>
+
+</body>
+</html>

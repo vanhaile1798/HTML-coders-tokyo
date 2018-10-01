@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="text" id="new-item"/>
+	<button id="save-btn">Save</button>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript">
+		var input = document.getElementById('new-item');
+		var url = 'http://localhost:8081/todos/' + window.location.hash.slice(1);
+		axios.get(url).then(res => {
+			input.value = res.data.content;	
+		});
+		var saveBtn = document.getElementById('save-btn');
+		saveBtn.addEventListener('click', updateItem);
+
+		function updateItem() {
+			
+			var newItem = { content: input.value};
+
+			axios({
+			 	method: 'put',
+			 	url: url,
+			 	headers: {'Content-Type': 'application/json'},
+				data: newItem
+			}).
+			then(() => {
+				window.location.href = '/';
+			})
+			
+			// input.value = '';
+  		}
+</script>
+
+</body>
+</html>

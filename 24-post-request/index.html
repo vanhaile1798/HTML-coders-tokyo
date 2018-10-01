@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo List</title>
+</head>
+<body>
+  <a href="/new-item.html">New Item</a>
+  <ul id="todo-list"></ul>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript">
+    var url = 'http://localhost:8081/todos';
+    var htmlList = document.getElementById('todo-list');
+
+    htmlList.addEventListener('click', function(event) {
+      var button = event.target;
+      if (button.dataset.id) {
+        window.location.href="/edit-item.html#" + button.dataset.id;
+      }
+      
+    })
+    axios.get(url).then((res) => {
+      var items = res.data;
+      render(items);
+    });
+
+    function render(items) {
+      
+      var content = items.map(function(item) {
+        return '<li>' + item.content + '<button data-id="' + item.id + '">Edit</button></li>';
+      });
+
+      htmlList.innerHTML = content.join('');
+    }
+    // render();
+  </script>
+</body>
+</html>

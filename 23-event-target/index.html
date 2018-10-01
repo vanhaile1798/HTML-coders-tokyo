@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo List</title>
+</head>
+<body>
+  <input type="text" id="new-item" />
+  <button id="add-btn">Add</button>
+  <ul id="todo-list"></ul>
+  <script type="text/javascript">
+    var storageKey = 'todoList';
+    var dataString = localStorage.getItem(storageKey);
+    var htmlList = document.getElementById('todo-list');
+    var addBtn = document.getElementById('add-btn');
+    addBtn.addEventListener('click', addItem);
+    htmlList.addEventListener('click', function(event) {
+      var button = event.target;
+      var i = parseInt(button.dataset.id);
+      todoList.splice(i, 1);
+      render();
+      localStorage.setItem(storageKey, JSON.stringify(todoList));
+    });
+
+    var todoList;
+
+    if (dataString) {
+      todoList = JSON.parse(dataString);
+    } else {
+      todoList = [];
+    }
+    
+
+    function addItem() {
+      var input = document.getElementById('new-item');
+      var newItem = input.value;
+      todoList.push(newItem);
+      render();
+      input.value = '';
+      localStorage.setItem(storageKey, JSON.stringify(todoList));
+    }
+
+    function render() {
+      
+      var content = todoList.map(function(item, i) {
+        return '<li>' + item + '<button data-id="' + i + '">Delete</button></li>';
+      });
+
+      htmlList.innerHTML = content.join('');
+    }
+    render();
+  </script>
+</body>
+</html>

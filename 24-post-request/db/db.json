@@ -1,0 +1,28 @@
+{
+  "todos": [
+    {
+      "content": "Go to bed",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "content": "Go to school"
+    },
+    {
+      "id": 3,
+      "content": "Do homework"
+    },
+    {
+      "content": "Hello",
+      "id": 4
+    },
+    {
+      "content": "Say Hello to you",
+      "id": 5
+    },
+    {
+      "content": "Sing a song",
+      "id": 6
+    }
+  ]
+}
